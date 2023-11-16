@@ -126,7 +126,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return Number(value.toString()[value.toString().length - 1]);
+  // return Number(value.toString()[value.toString().length - 1]);
+  return value % 10;
 }
 
 /**
@@ -471,7 +472,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  return parseFloat(str);
+  return Number.parseFloat(str);
 }
 
 /**
@@ -489,7 +490,7 @@ function getFloatOnString(str) {
  * '10', 8              => 8
  */
 function getIntegerOnString(str, base) {
-  return parseInt(str, base);
+  return Number.parseInt(str, base);
 }
 
 /**
@@ -562,7 +563,7 @@ function roundToNearestInteger(number) {
  * -5.5 => -5
  */
 function getIntegerPartNumber(number) {
-  return parseInt(number, 10);
+  return Math.trunc(number);
 }
 
 /**
